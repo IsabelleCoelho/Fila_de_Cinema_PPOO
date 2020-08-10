@@ -3,7 +3,7 @@ public class Funcionario extends Pessoa{
     private int salario;
     private String expediente;
     private String tempoAtendendo;
-    private String cargo;
+    //private String cargo;
 
     //Construtor
     public Funcionario(String nome, int idade, String cpf, int salario, String expediente, String tempoAtendendo, String cargo){
@@ -23,9 +23,9 @@ public class Funcionario extends Pessoa{
     public String getTempoAtendendo(){
         return this.tempoAtendendo;
     }
-    public String getCargo(){
-        return this.cargo;
-    }
+    //public String getCargo(){
+    //    return this.cargo;
+    //}
 
     //Setters
     public void setSalario(int novoSalario){
@@ -37,9 +37,9 @@ public class Funcionario extends Pessoa{
     public void setTempoAtendendo(String novoTempoAtendendo){
         this.tempoAtendendo=novoTempoAtendendo;
     }
-    public void setCargo(String novoCargo){
-        this.cargo=novoCargo;
-    }
+    //public void setCargo(String novoCargo){
+    //    this.cargo=novoCargo;
+    //}
 
 
     
