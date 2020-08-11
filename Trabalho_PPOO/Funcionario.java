@@ -1,8 +1,9 @@
-public class Funcionario extends Pessoa{
+public abstract class Funcionario extends Pessoa{
     //Atributos
     private int salario;
     private String expediente;
     private String tempoAtendendo;
+    private String cargo;
     //private String cargo;
 
     //Construtor
@@ -11,36 +12,35 @@ public class Funcionario extends Pessoa{
         this.salario=salario;
         this.expediente=expediente;
         this.tempoAtendendo=tempoAtendendo;
+        this.cargo= cargo;
     }
-
+    
     //Getters
     public int getSalario(){
-        return this.salario;
+        return salario;
     }
     public String getExpediente(){
-        return this.expediente;
+        return expediente;
     }
     public String getTempoAtendendo(){
-        return this.tempoAtendendo;
+        return tempoAtendendo;
     }
-    //public String getCargo(){
-    //    return this.cargo;
-    //}
+    public String getCargo(){
+        return cargo;
+    }
 
     //Setters
     public void setSalario(int novoSalario){
-        this.salario=novoSalario;
+        salario=novoSalario;
     }
     public void setExpediente(String novoExpediente){
-        this.expediente=novoExpediente;
+        expediente=novoExpediente;
     }
     public void setTempoAtendendo(String novoTempoAtendendo){
-        this.tempoAtendendo=novoTempoAtendendo;
+        tempoAtendendo=novoTempoAtendendo;
     }
-    //public void setCargo(String novoCargo){
-    //    this.cargo=novoCargo;
-    //}
-
-
-    
+    public void setCargo(String novoCargo){
+        cargo=novoCargo;
+    }
+    public abstract String toString();   
 }

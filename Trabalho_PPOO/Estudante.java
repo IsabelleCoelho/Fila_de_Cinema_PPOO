@@ -10,11 +10,11 @@ public class Estudante extends Pessoa{
 
     //Getters
     public String getDocumento(){
-        return this.documento;
+        return documento;
     }
 
     //Setters
     public void setDocumento(String novoDocumento){
-        this.documento=novoDocumento;
+        documento=novoDocumento;
     }
 }

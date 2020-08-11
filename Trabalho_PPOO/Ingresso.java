@@ -15,30 +15,30 @@ public class Ingresso {
 
     //Getters
     public String getFilme(){
-        return this.filme;
+        return filme;
     }
     public int getNumero(){
-        return this.numero;
+        return numero;
     }
     public int getValor(){
-        return this.valor;
+        return valor;
     }
     public String getSessao(){
-        return this.sessao;
+        return sessao;
     }
 
     //Setters
     public void setFilme(String novoFilme){
-        this.filme=novoFilme;
+        filme=novoFilme;
     }
     public void setNumero(int novoNumero){
-        this.numero=novoNumero;
+        numero=novoNumero;
     }
     public void setValor(int novoValor){
-        this.valor=novoValor;
+        valor=novoValor;
     }
     public void setSessao(String novaSessao){
-        this.sessao=novaSessao;
+        sessao=novaSessao;
     }
     
 }

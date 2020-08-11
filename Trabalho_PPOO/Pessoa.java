@@ -7,19 +7,19 @@ public class Pessoa{
     //Construtor
     public Pessoa(String nome, int idade, String cpf){
         this.nome=nome;
-        this.idade = idade;
-        this.cpf = cpf;
+        this.idade=idade;
+        this.cpf=cpf;
     }
 
     //Getters
     public String getNome(){
-        return this.nome;
+        return nome;
     }
     public int getIdade(){
-        return this.idade;
+        return idade;
     }
     public String getCpf(){
-        return this.cpf;
+        return cpf;
     }
 
     //Setters
