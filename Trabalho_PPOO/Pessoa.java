@@ -1,4 +1,4 @@
-public class Pessoa{
+public abstract class Pessoa{
     //Atributos
     private String nome;
     private int idade;
@@ -32,4 +32,5 @@ public class Pessoa{
     public void setCpf(String novoCpf){
         this.cpf=novoCpf;
     }
+    public abstract String toString();
 }

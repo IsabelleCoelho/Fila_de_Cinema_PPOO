@@ -17,4 +17,7 @@ public class Estudante extends Pessoa{
     public void setDocumento(String novoDocumento){
         documento=novoDocumento;
     }
+    public String toString(){
+        return "";
+    }   
 }

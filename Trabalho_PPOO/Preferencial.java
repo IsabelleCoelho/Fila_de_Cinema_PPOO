@@ -17,5 +17,7 @@ public class Preferencial extends Pessoa{
     public void setTipo(String novoTipo){
         this.tipo=novoTipo;
     }
-    
+    public String toString(){
+        return "";
+    }
 }
