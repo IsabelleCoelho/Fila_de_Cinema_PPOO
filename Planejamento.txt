@@ -1,0 +1,23 @@
+R1: Tipos de clientes -> Regular, Preferencial, Estudante
+R2: Tipos de atendentes -> Gerente, Efetivado, Estagiario
+R3: Classe geral (abstrata) para os eventos -> Fila 
+R4: Eventos -> Entrar na fila, sair da fila, comprar ingresso
+R5: Quantidade de atendentes por tipo -> (dinâmico)
+    Estratégia de atendimento das filas -> qte de filas = qte de efetivados+estagiários. Preferencial passa na frente.
+    Info. das entidades atendidas -> tempo de chegada, tipo de entidade, tempo de saída.
+R6: Classe de simulação.
+R7: Estatísticas da Simulação.
+R8: Classe principal -> Cinema
+R9: Tratamento de exceções.
+R10: Implementar seguindo o padrão Javadoc.
+
+Salário definido por hora trabalhada.
+Estagiário: x/2
+Efetivado: x
+Gerente: 3x
+
+Tempo de atendimento:
+Estagiário: 1.5y
+Efetivado: y -> preferencial: 3, estudante: 2, regular: 1
+
+A fila será em relação às pessoas.
