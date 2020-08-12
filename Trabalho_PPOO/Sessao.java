@@ -12,9 +12,10 @@ public class Sessao {
     private String evento;
     private int lotacao;
     private double preco;
+    private static Sessao instanciaUnica;
     private ArrayList<Ingresso> ingressos;
 
-    public Sessao(String horario, String filme, String sala, String evento, int lotacao, double preco){
+    private Sessao(String horario, String filme, String sala, String evento, int lotacao, double preco){
         this.horario=horario;
         this.filme=filme;
         this.sala=sala;
@@ -22,6 +23,13 @@ public class Sessao {
         this.lotacao=lotacao;
         this.preco=preco;
         ingressos=new ArrayList<Ingresso>();
+    }
+
+    public static Sessao getInstance(String horario, String filme, String sala, String evento, int lotacao, double preco){
+        if(instanciaUnica == null){
+            instanciaUnica = new Sessao(horario, filme, sala, evento, lotacao, preco);
+        }
+        return instanciaUnica;
     }
 
     //Getters
