@@ -6,6 +6,7 @@ public class Cinema {
     private String cnpj;
     private ArrayList<Guiche> guiches;
     private ArrayList<Funcionario> funcionarios;
+    private Fila fila;
 
     //Construtor
     public Cinema(String nome, String cep, String cidade, String rua, int numero, String cnpj){
@@ -14,6 +15,7 @@ public class Cinema {
         this.cnpj=cnpj;
         funcionarios=new ArrayList<Funcionario>();
         guiches=new ArrayList<Guiche>();
+        Fila fila = new Fila();
     }
 
     //Getters
@@ -36,5 +38,13 @@ public class Cinema {
     }
     public void setCpnj(String novoCnpj){
         cnpj = novoCnpj;
+    }
+
+    //Metodos
+    public void adicionarNaFila(Cliente pessoa){
+        fila.adicionarNaFila(pessoa);
+    }
+    public void retirarDaFila(Cliente pessoa){
+        fila.removerDaFila(pessoa);
     }
 }

@@ -1,10 +1,10 @@
-public class Preferencial extends Pessoa{
+public class Preferencial extends Cliente{
     //Atributos
     private String tipo;
 
     //Construtor
-    public Preferencial(String nome, String idade, String cpf, String tipo){
-        super(nome, idade, cpf);
+    public Preferencial(String nome, String idade, String cpf, int tempoDeAtencao, int tempoNaFila, String tipo){
+        super(nome, idade, cpf, tempoDeAtencao, tempoNaFila);
         this.tipo = tipo;
     }
 

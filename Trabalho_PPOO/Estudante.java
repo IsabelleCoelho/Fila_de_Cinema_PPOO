@@ -1,10 +1,10 @@
-public class Estudante extends Pessoa{
+public class Estudante extends Cliente{
     //Atributos
     private String documento;
 
     //Construtor
-    public Estudante(String nome, String idade, String cpf, String documento){
-        super(nome, idade, cpf);
+    public Estudante(String nome, String idade, String cpf, int tempoDeAtencao, int tempoNaFila, String documento){
+        super(nome, idade, cpf, tempoDeAtencao, tempoNaFila);
         this.documento = documento;
     }
 
