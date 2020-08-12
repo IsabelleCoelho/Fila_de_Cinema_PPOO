@@ -46,7 +46,13 @@ public class Cinema {
         fila.adicionarNaFila(cliente);
     }
     public void retirarDaFila(Cliente cliente){
-        fila.removerDaFila(cliente);
+        if(sessao.getLotacao()>0){
+            fila.removerDaFila(cliente);
+            sessao.setLotacao();
+        }
+        else{
+            fecharSessao();
+        }
     }
     public void abrirGuiche(Guiche guiche, Funcionario funcionario){
         guiche.setFuncionario(funcionario);
@@ -56,6 +62,6 @@ public class Cinema {
         sessao = Sessao.getInstance(horario, filme, sala, evento, lotacao, preco);
     }
     public void fecharSessao(){
-        
+        sessao.fecharSessao();
     }
 }

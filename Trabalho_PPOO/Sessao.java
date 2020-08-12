@@ -54,4 +54,12 @@ public class Sessao {
     public void setPreco(double novoPreco){
         this.preco=novoPreco;
     }
+    public void setLotacao(){
+        this.lotacao--;
+    }
+
+    //Métodos
+    public void fecharSessao(){
+        instanciaUnica = null;
+    }
 }
