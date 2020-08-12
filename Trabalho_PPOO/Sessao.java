@@ -11,21 +11,23 @@ public class Sessao {
     private String sala;
     private String evento;
     private int lotacao;
+    private double preco;
     private static Sessao instanciaUnica;
     private ArrayList<Ingresso> ingressos;
 
-    private Sessao(String horario, String filme, String sala, String evento, int lotacao){
+    private Sessao(String horario, String filme, String sala, String evento, int lotacao, double preco){
         this.horario=horario;
         this.filme=filme;
         this.sala=sala;
         this.evento=evento;
         this.lotacao=lotacao;
+        this.preco=preco;
         ingressos=new ArrayList<Ingresso>();
     }
 
-    public static Sessao getInstance(String horario, String filme, String sala, String evento, int lotacao){
+    public static Sessao getInstance(String horario, String filme, String sala, String evento, int lotacao, double preco){
         if(instanciaUnica == null){
-            instanciaUnica = new Sessao(horario, filme, sala, evento, lotacao);
+            instanciaUnica = new Sessao(horario, filme, sala, evento, lotacao, preco);
         }
         return instanciaUnica;
     }
@@ -45,5 +47,11 @@ public class Sessao {
     }
     public int getLotacao(){
         return lotacao;
+    }
+    public double getPreco(){
+        return this.preco;
+    }
+    public void setPreco(double novoPreco){
+        this.preco=novoPreco;
     }
 }

@@ -6,17 +6,22 @@
 public class Cliente extends Pessoa{
     private int tempoDeAtencao;
     private int tempoNaFila;
+    private double modificadorDesconto;
     
-    public Cliente(String nome, String idade, String cpf, int tempoDeAtencao, int tempoNaFila){
+    public Cliente(String nome, String idade, String cpf, int tempoDeAtencao, int tempoNaFila, double modificadorDesconto){
         super(nome, idade, cpf);
         this.tempoDeAtencao=tempoDeAtencao;
         this.tempoNaFila=tempoNaFila;
+        this.modificadorDesconto=modificadorDesconto;
     }
 
     public int getTempoDeAtencao(){
-        return tempoDeAtencao;
+        return this.tempoDeAtencao;
     }
     public int getTempoNaFila(){
-        return tempoNaFila;
+        return this.tempoNaFila;
+    }
+    public double getModificadorDesconto(){
+        return this.modificadorDesconto;
     }
 }

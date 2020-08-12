@@ -7,8 +7,8 @@ public class Estudante extends Cliente{
     private String documento;
 
     //Construtor
-    public Estudante(String nome, String idade, String cpf, int tempoDeAtencao, int tempoNaFila, String documento){
-        super(nome, idade, cpf, tempoDeAtencao, tempoNaFila);
+    public Estudante(String nome, String idade, String cpf, int tempoDeAtencao, int tempoNaFila, double modificadorDesconto, String documento){
+        super(nome, idade, cpf, tempoDeAtencao, tempoNaFila, modificadorDesconto);
         this.documento = documento;
     }
 
