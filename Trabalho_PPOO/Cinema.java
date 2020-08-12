@@ -41,10 +41,14 @@ public class Cinema {
     }
 
     //Metodos
-    public void adicionarNaFila(Cliente pessoa){
-        fila.adicionarNaFila(pessoa);
+    public void adicionarNaFila(Cliente cliente){
+        fila.adicionarNaFila(cliente);
     }
-    public void retirarDaFila(Cliente pessoa){
-        fila.removerDaFila(pessoa);
+    public void retirarDaFila(Cliente cliente){
+        fila.removerDaFila(cliente);
+    }
+    public void abrirGuiche(Guiche guiche, Funcionario funcionario){
+        guiche.setFuncionario(funcionario);
+        bilheteria.add(guiche);
     }
 }
