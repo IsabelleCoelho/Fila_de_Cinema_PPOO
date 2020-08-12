@@ -4,7 +4,7 @@
  */
 
 public class Guiche {
-    Funcionario funcionario;
+    private Funcionario funcionario;
 
     public Guiche(){
         this.funcionario = null;

@@ -5,10 +5,17 @@ import java.util.LinkedList;
  */
 
 public class Fila {
-    private LinkedList<Cliente>clientes;
+    private static LinkedList<Cliente>clientes;
+    private static Fila instanciaUnica;
 
-    public Fila(){
+    private Fila(){
         clientes = new LinkedList<Cliente>();
+    }
+    public static Fila getInstance(){
+        if(instanciaUnica == null){
+            instanciaUnica = new Fila();
+        }
+        return instanciaUnica;
     }
 
     public void adicionarNaFila(Cliente pessoa){
