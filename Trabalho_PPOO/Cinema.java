@@ -6,7 +6,8 @@ public class Cinema {
     private String cnpj;
     private ArrayList<Guiche> bilheteria;
     private ArrayList<Funcionario> escala;
-    private Fila fila = null;
+    private Sessao sessao;
+    private Fila fila;
 
     //Construtor
     public Cinema(String nome, String cep, String cidade, String rua, int numero, String cnpj){
@@ -15,7 +16,7 @@ public class Cinema {
         this.cnpj=cnpj;
         escala=new ArrayList<Funcionario>();
         bilheteria=new ArrayList<Guiche>();
-        fila = fila.getInstance();
+        fila = Fila.getInstance();
     }
 
     //Getters
@@ -50,5 +51,11 @@ public class Cinema {
     public void abrirGuiche(Guiche guiche, Funcionario funcionario){
         guiche.setFuncionario(funcionario);
         bilheteria.add(guiche);
+    }
+    public void abrirSessao(String horario, String filme, String sala, String evento, int lotacao, double preco){
+        sessao = Sessao.getInstance(horario, filme, sala, evento, lotacao, preco);
+    }
+    public void fecharSessao(){
+        
     }
 }
