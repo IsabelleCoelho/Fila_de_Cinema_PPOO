@@ -4,16 +4,16 @@ public class Cinema {
     private String nome;
     private String cep;
     private String cnpj;
-    private ArrayList<Filme> filmes;
-    private ArrayList<Pessoa> pessoas;
+    private ArrayList<Guiche> guiches;
+    private ArrayList<Funcionario> funcionarios;
 
     //Construtor
     public Cinema(String nome, String cep, String cidade, String rua, int numero, String cnpj){
         this.nome=nome;
         this.cep=cep;
         this.cnpj=cnpj;
-        pessoas=new ArrayList<Pessoa>();
-        filmes=new ArrayList<Filme>();
+        funcionarios=new ArrayList<Funcionario>();
+        guiches=new ArrayList<Guiche>();
     }
 
     //Getters
@@ -36,11 +36,5 @@ public class Cinema {
     }
     public void setCpnj(String novoCnpj){
         cnpj = novoCnpj;
-    }
-    public void gerarRelatorio(){
-        for (Pessoa pessoa : pessoas) {
-            System.out.println(pessoa);
-            System.out.println();
-        }
     }
 }

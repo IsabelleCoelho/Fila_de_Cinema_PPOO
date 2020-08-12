@@ -1,22 +1,19 @@
 public class Ingresso {
     //Atributos
-    private String filme;
     private int numero;
     private int valor;
     private String sessao;
+    private String tipoIngresso;
 
     //Construtor
-    public Ingresso(String filme, int numero, int valor, String sessao){
-        this.filme=filme;
+    public Ingresso(String filme, int numero, int valor, String sessao, String tipoIngresso){
         this.numero = numero;
         this.valor = valor;
         this.sessao = sessao;
+        this.tipoIngresso = tipoIngresso;
     }
 
     //Getters
-    public String getFilme(){
-        return filme;
-    }
     public int getNumero(){
         return numero;
     }
@@ -26,11 +23,11 @@ public class Ingresso {
     public String getSessao(){
         return sessao;
     }
-
-    //Setters
-    public void setFilme(String novoFilme){
-        filme=novoFilme;
+    public String getTipoIngresso(){
+        return tipoIngresso;
     }
+    
+    //Setters
     public void setNumero(int novoNumero){
         numero=novoNumero;
     }

@@ -3,7 +3,7 @@ public class Preferencial extends Pessoa{
     private String tipo;
 
     //Construtor
-    public Preferencial(String nome, int idade, String cpf, String tipo){
+    public Preferencial(String nome, String idade, String cpf, String tipo){
         super(nome, idade, cpf);
         this.tipo = tipo;
     }

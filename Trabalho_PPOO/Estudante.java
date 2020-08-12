@@ -3,7 +3,7 @@ public class Estudante extends Pessoa{
     private String documento;
 
     //Construtor
-    public Estudante(String nome, int idade, String cpf, String documento){
+    public Estudante(String nome, String idade, String cpf, String documento){
         super(nome, idade, cpf);
         this.documento = documento;
     }

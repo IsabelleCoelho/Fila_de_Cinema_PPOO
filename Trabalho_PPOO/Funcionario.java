@@ -1,18 +1,19 @@
+import java.util.HashMap;
+
 public abstract class Funcionario extends Pessoa{
     //Atributos
     private int salario;
     private String expediente;
     private String tempoAtendendo;
-    private String cargo;
-    //private String cargo;
+    private HashMap<String, Integer> numAtendimentos;
 
     //Construtor
-    public Funcionario(String nome, int idade, String cpf, int salario, String expediente, String tempoAtendendo, String cargo){
+    public Funcionario(String nome, String idade, String cpf, int salario, String expediente, String tempoAtendendo){
         super(nome, idade, cpf);
         this.salario=salario;
         this.expediente=expediente;
         this.tempoAtendendo=tempoAtendendo;
-        this.cargo= cargo;
+        numAtendimentos = new HashMap<String, Integer>();
     }
     
     //Getters
@@ -25,9 +26,6 @@ public abstract class Funcionario extends Pessoa{
     public String getTempoAtendendo(){
         return tempoAtendendo;
     }
-    public String getCargo(){
-        return cargo;
-    }
 
     //Setters
     public void setSalario(int novoSalario){
@@ -38,9 +36,6 @@ public abstract class Funcionario extends Pessoa{
     }
     public void setTempoAtendendo(String novoTempoAtendendo){
         tempoAtendendo=novoTempoAtendendo;
-    }
-    public void setCargo(String novoCargo){
-        cargo=novoCargo;
     }
     public abstract String toString();   
 }
