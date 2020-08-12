@@ -1,3 +1,8 @@
+/**
+ * Classe que representa um ingresso de determinada sessao que pertence ao cinema.
+ * COLOCAR O QUE FAZ (ex: permite realizar a compra do ingresso)
+ */
+
 public class Ingresso {
     //Atributos
     private int numero;

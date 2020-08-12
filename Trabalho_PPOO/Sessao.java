@@ -1,3 +1,8 @@
+/**
+ * Classe que representa uma sessão de um filme do cinema.
+ * COLOCAR O QUE FAZ (ex: permite realizar a compra do ingresso)
+ */
+
 import java.util.*;
 public class Sessao {
     //Atributos
