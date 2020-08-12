@@ -5,7 +5,7 @@ public class Cinema {
     private String cep;
     private String cnpj;
     private ArrayList<Guiche> bilheteria;
-    private ArrayList<Funcionario> funcionarios;
+    private ArrayList<Funcionario> escala;
     private Fila fila = null;
 
     //Construtor
@@ -13,7 +13,7 @@ public class Cinema {
         this.nome=nome;
         this.cep=cep;
         this.cnpj=cnpj;
-        funcionarios=new ArrayList<Funcionario>();
+        escala=new ArrayList<Funcionario>();
         bilheteria=new ArrayList<Guiche>();
         fila = fila.getInstance();
     }
