@@ -1,4 +1,8 @@
 import java.util.HashMap;
+/**
+ * Classe que representa um funcionário do cinema.
+ * COLOCAR O QUE FAZ (ex: permite realizar a compra do ingresso)
+ */
 
 public abstract class Funcionario extends Pessoa{
     //Atributos

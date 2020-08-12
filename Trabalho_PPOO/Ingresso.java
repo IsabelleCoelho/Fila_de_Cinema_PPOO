@@ -1,12 +1,17 @@
+/**
+ * Classe que representa um ingresso de determinada sessao que pertence ao cinema.
+ * COLOCAR O QUE FAZ (ex: permite realizar a compra do ingresso)
+ */
+
 public class Ingresso {
     //Atributos
     private int numero;
     private int valor;
-    private String sessao;
+    private Sessao sessao;
     private String tipoIngresso;
 
     //Construtor
-    public Ingresso(String filme, int numero, int valor, String sessao, String tipoIngresso){
+    public Ingresso(String filme, int numero, int valor, Sessao sessao, String tipoIngresso){
         this.numero = numero;
         this.valor = valor;
         this.sessao = sessao;
@@ -20,7 +25,7 @@ public class Ingresso {
     public int getValor(){
         return valor;
     }
-    public String getSessao(){
+    public Sessao getSessao(){
         return sessao;
     }
     public String getTipoIngresso(){
@@ -34,7 +39,7 @@ public class Ingresso {
     public void setValor(int novoValor){
         valor=novoValor;
     }
-    public void setSessao(String novaSessao){
+    public void setSessao(Sessao novaSessao){
         sessao=novaSessao;
     }
     

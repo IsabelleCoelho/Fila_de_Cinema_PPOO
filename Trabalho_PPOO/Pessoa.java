@@ -1,3 +1,9 @@
+/**
+ * Classe que representa uma pessoa que possui relação com o cinema.
+ * COLOCAR O QUE FAZ (ex: permite realizar a compra do ingresso)
+ */
+
+
 public class Pessoa {
     private String nome;
     private String idade;

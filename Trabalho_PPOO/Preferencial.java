@@ -1,3 +1,7 @@
+/**
+ * Classe que representa um cliente com atendimento preferencial no cinema.
+ * COLOCAR O QUE FAZ (ex: permite realizar a compra do ingresso)
+ */
 public class Preferencial extends Pessoa{
     //Atributos
     private String tipo;

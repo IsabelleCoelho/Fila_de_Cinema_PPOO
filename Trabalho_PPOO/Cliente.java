@@ -1,3 +1,8 @@
+/**
+ * Classe que representa uma pessoa que consumirá um serviço do cinema.
+ * COLOCAR O QUE FAZ (ex: permite realizar a compra do ingresso)
+ */
+
 public class Cliente extends Pessoa{
     private int tempoDeAtencao;
     private int tempoNaFila;

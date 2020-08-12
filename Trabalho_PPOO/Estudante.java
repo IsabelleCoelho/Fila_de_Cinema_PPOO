@@ -1,3 +1,8 @@
+/**
+ * Classe que representa um estudante que está frequentando o cinema.
+ * COLOCAR O QUE FAZ (ex: permite realizar a compra do ingresso)
+ */
+
 public class Estudante extends Pessoa{
     //Atributos
     private String documento;
