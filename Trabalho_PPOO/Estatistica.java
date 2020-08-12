@@ -4,5 +4,13 @@
  */
 
 public class Estatistica {
-    
+
+    /**
+     * Método para calcular o rendimento que o cinema teve com uma sessão.
+     * O método não possui entrada e retorna o valor final obtido com a sessão em questão.
+     * @return
+     */
+    public double rendimentoSessao(){
+        return 0; //FALTA IMPLEMENTAR
+    }
 }
