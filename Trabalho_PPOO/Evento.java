@@ -4,5 +4,9 @@
  */
 
 public abstract class Evento {
-    
+
+    public double valorAPagar(Cliente cliente, double preco){
+        return preco*cliente.getModificadorDesconto();
+    }
+
 }

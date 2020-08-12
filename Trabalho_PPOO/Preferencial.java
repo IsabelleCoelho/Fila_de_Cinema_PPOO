@@ -7,8 +7,8 @@ public class Preferencial extends Cliente{
     private String tipo;
 
     //Construtor
-    public Preferencial(String nome, String idade, String cpf, int tempoDeAtencao, int tempoNaFila, String tipo){
-        super(nome, idade, cpf, tempoDeAtencao, tempoNaFila);
+    public Preferencial(String nome, String idade, String cpf, int tempoDeAtencao, int tempoNaFila, double modificadorDesconto, String tipo){
+        super(nome, idade, cpf, tempoDeAtencao, tempoNaFila, modificadorDesconto);
         this.tipo = tipo;
     }
 

@@ -11,14 +11,16 @@ public class Sessao {
     private String sala;
     private String evento;
     private int lotacao;
+    private double preco;
     private ArrayList<Ingresso> ingressos;
 
-    public Sessao(String horario, String filme, String sala, String evento, int lotacao){
+    public Sessao(String horario, String filme, String sala, String evento, int lotacao, double preco){
         this.horario=horario;
         this.filme=filme;
         this.sala=sala;
         this.evento=evento;
         this.lotacao=lotacao;
+        this.preco=preco;
         ingressos=new ArrayList<Ingresso>();
     }
 
@@ -37,5 +39,11 @@ public class Sessao {
     }
     public int getLotacao(){
         return lotacao;
+    }
+    public double getPreco(){
+        return this.preco;
+    }
+    public void setPreco(double novoPreco){
+        this.preco=novoPreco;
     }
 }
