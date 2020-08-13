@@ -4,14 +4,14 @@
 
 public class Guiche {
     private Funcionario funcionario;
-
+    private int atendendo;
     /**
-     * Construtor da classe Guiche
+     * Construtor da classe Guiche.
      */
     public Guiche(){
         this.funcionario = null;
+        this.atendendo = 0;
     }
-
     /**
      * Setter para o funcionario
      * @param funcionario - o funcionário que será alocado no guiche
@@ -27,10 +27,30 @@ public class Guiche {
         return funcionario;
     }
     /**
+     * Método responsável por retornar o tempo que falta para acabar o atendimento do cliente.
+     * @return int - valor do atributo "atendendo".
+     */
+    public int getAtendendo(){
+        return this.atendendo;
+    }
+    /**
      * Método que retorna o tempo de atendimento do funcionário
-     * @return tempoAtendimento - o tempo de atendimento do funcionario
+     * @return int - o tempo de atendimento do funcionario
      */
     public int tempoAtendimento(){
         return funcionario.getTempoAtendendo();
+    }
+    /**
+     * Método responsável por atribuir novo valor ao atributo "atendendo".
+     * @param novoAtendendo - inteiro que armazena o tempo de atendimento.
+     */
+    public void setAtendendo(int novoAtendendo){
+        this.atendendo=novoAtendendo;
+    }
+    /**
+     * Método responsável por decrementar o valor de atendendo.
+     */
+    public void atendido(){
+        this.atendendo--;
     }
 }

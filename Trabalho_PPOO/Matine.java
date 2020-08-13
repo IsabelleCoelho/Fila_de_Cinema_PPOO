@@ -1,8 +1,6 @@
 /**
  * Classe que representa o evento matinê que ocorrerá no cinema.
  */
-
-
 public class Matine extends Evento{
     /**
      * Método responsável por calcular o valor do ingresso.
@@ -10,7 +8,8 @@ public class Matine extends Evento{
      * @param double - valor do ingresso inteiro
      * @return double - valor que o cliente deve pagar
      */
-    public double valorAPagar(double preco){
+    @Override
+    public double valorAPagar(Cliente cliente, double preco){
         return preco/2;
     }
 }

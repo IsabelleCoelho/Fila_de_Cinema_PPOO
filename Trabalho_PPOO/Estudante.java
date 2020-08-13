@@ -14,7 +14,7 @@ public class Estudante extends Cliente{
      * @param documento - o documento do estudante
      */
     public Estudante(String nome, int idade, String cpf, String documento){
-        super(nome, idade, cpf, 2, 0, 0.5);
+        super(nome, idade, cpf, 2);
         this.documento = documento;
     }
 

@@ -7,7 +7,7 @@ public class Sessao {
     private String horario;
     private String filme;
     private String sala;
-    private String evento;
+    private Evento evento;
     private int lotacao;
     private double preco;
     private String estado;
@@ -15,104 +15,115 @@ public class Sessao {
 
     /**
      * Construtor para a classe Sessao
-     * @param String horario - o horario da sessão
-     * @param String filme - o filme que estará passando na sessão
-     * @param String sala - a sala em que ocorrerá a sessão
-     * @param String evento - o tipo de evento da sessão
-     * @param int lotacao - a capacidade máxima de pessoas que a sessão pode comportar
-     * @param double preco - o preço do ingresso para a sessão
+     * @param horario - string contendo horario da sessão
+     * @param filme - string contendo filme que estará passando na sessão
+     * @param sala - string contendo a sala em que ocorrerá a sessão
+     * @param evento - objeto do tipo Evento
+     * @param lotacao - inteiro contendo a capacidade máxima de pessoas que a sessão pode comportar
+     * @param preco - double contendo preço do ingresso para a sessão
      */
-    public Sessao(String horario, String filme, String sala, String evento, int lotacao, double preco){
+    public Sessao(String horario, String filme, String sala, Evento evento, int lotacao){
         this.horario=horario;
         this.filme=filme;
         this.sala=sala;
-        this.evento=evento;
         this.lotacao=lotacao;
-        this.preco=preco;
+        this.preco=20;
         estado = "Aberta";
         ingressos=new LinkedList<Ingresso>();
         for (int i = 0; i < this.lotacao; i++) {
             Ingresso ingresso = new Ingresso(getFilme(), i, 20, "integral");
             ingressos.add(ingresso);
         }
+        this.evento=evento;
     }
 
     /**
      * Getter para o horario
-     * @return String horario - o horário em que a sessão se inicia
+     * @return String - o horário em que a sessão se inicia
      */
     public String getHorario(){
         return horario;
     }
     /**
      * Getter para o filme
-     * @return String filme - o filme que vai passar na sessão
+     * @return String - o filme que vai passar na sessão
      */
     public String getFilme(){
         return filme;
     }
     /**
      * Getter para a sala
-     * @return String sala - a sala em que ocorrerá a sessão
+     * @return String - a sala em que ocorrerá a sessão
      */
     public String getSala(){
         return sala;
     }
     /**
-     * Getter para o evento
-     * @return String evento - o evento que ocorre na sessão
-     */
-    public String getEvento(){
-        return evento;
-    }
-    /**
      * Getter para a lotação
-     * @return String lotacao - a capacidade máxima que uma sessão pode comportar
+     * @return String - a capacidade máxima que uma sessão pode comportar
      */
     public int getLotacao(){
         return lotacao;
     }
     /**
      * Getter para o preço
-     * @return double preco - o valor do ingresso para a sessão
+     * @return double - o valor do ingresso para a sessão
      */
     public double getPreco(){
         return this.preco;
     }
     /**
      * Getter para a situação da sessão
-     * @return String estado - indica o estado da sessão (aberto ou fechado)
+     * @return String - indica o estado da sessão (aberto ou fechado)
      */
     public String getEstado(){
         return estado;
     }
     /**
      * Setter para o preço
-     * @param double novoPreco - o novo preço do ingresso da sessão
+     * @param novoPreco - o novo preço do ingresso da sessão
      */
     public void setPreco(double novoPreco){
         this.preco=novoPreco;
     }
     /**
      * Setter para a situação da sessão
-     * @param String estado - o novo estado em que a sessão se encontra (aberto ou fechado)
+     * @param estado - o novo estado em que a sessão se encontra (aberto ou fechado)
      */
     public void setEstado(String estado){
         this.estado = estado;
     }
     /**
-     * Fecha uma sessão
+     * Método responsável por fechar uma sessão
      */
     public void fecharSessao(){
         setEstado("Fechada");
     }
+    /**
+     * Método responsável por retornar a quantidade de ingressos que ainda não foram vendidos.
+     * @return int - quantidade de ingrssos que não foram vendidos
+     */
     public int getQuantIngresso(){
         return ingressos.size();
     }
+    /**
+     * Método responsável por atualizar a lotação da sessão.
+     */
     public void setLotacao(){
         lotacao--;
     }
+    /**
+     * Método responsável por remover um ingresso da lista de ingressos.
+     */
     public void venderIngresso(){
         ingressos.remove();
+    }
+    /**
+     * Método responsável por calcular o valor a ser pago pelo cliente.
+     * @param cliente - objeto do tipo Cliente.
+     * @return double - valor a ser pago pelo cliente.
+     */
+    public double valorAPagar(Cliente cliente){
+        return evento.valorAPagar(cliente, preco);
     }
 }

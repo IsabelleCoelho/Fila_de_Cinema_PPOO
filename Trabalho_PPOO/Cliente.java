@@ -1,49 +1,40 @@
 /**
  * Classe que representa uma pessoa que consumirá um serviço do cinema.
- * COLOCAR O QUE FAZ (ex: permite realizar a compra do ingresso)
  */
 
 public class Cliente extends Pessoa{
     private int tempoDeAtencao = 1;
     private int tempoNaFila = 0;
-    private double modificadorDesconto;
     
     /**
-     * Construtor da classe Cliente.
-     * Tal construtor será utilizado quando o objeto criado pertencer à classe "Estudante".
+     * Construtor da classe Cliente para estudante ou preferencial.
      * @param nome
      * @param idade
      * @param cpf
      * @param tempoDeAtencao
-     * @param tempoNaFila
-     * @param modificadorDesconto
      */
-    public Cliente(String nome, int idade, String cpf, int tempoDeAtencao, int tempoNaFila, double modificadorDesconto){
+    public Cliente(String nome, int idade, String cpf, int tempoDeAtencao){
         super(nome, idade, cpf);
         this.tempoDeAtencao = tempoDeAtencao;
-        this.tempoNaFila = tempoNaFila;
-        this.modificadorDesconto = modificadorDesconto;
+        this.tempoNaFila = 0;
+        this.tempoDeAtencao = tempoDeAtencao;
     }
 
     /**
-     * Construtor da classe Cliente.
-     * Tal construtor será usado quando quando o cliente não pertencer à classe "Estudante".
+     * Construtor da classe Cliente para um cliente regular.
      * @param nome
      * @param idade
      * @param cpf
-     * @param tempoDeAtencao
-     * @param tempoNaFila
      */
-    public Cliente(String nome, int idade, String cpf, int tempoDeAtencao, int tempoNaFila){
+    public Cliente(String nome, int idade, String cpf){
         super(nome, idade, cpf);
-        this.tempoDeAtencao = tempoDeAtencao;
-        this.tempoNaFila = tempoNaFila;
-        this.modificadorDesconto = 1;
+        this.tempoNaFila = 0;
+        this.tempoDeAtencao = 1;
     }
 
     /**
      * Getter do tempo que o cliente precisa para ser atendido.
-     * @return int tempoDeAtencao - tempo que o cliente precisa para ser atendido
+     * @return int - tempo que o cliente precisa para ser atendido
      */
     public int getTempoDeAtencao(){
         return this.tempoDeAtencao;
@@ -51,17 +42,9 @@ public class Cliente extends Pessoa{
 
     /**
      * Getter do tempo que o cliente ficou na fila
-     * @return int tempoNaFila - tempo que o cliente ficou na fila antes de ser atendido
+     * @return int - tempo que o cliente ficou na fila antes de ser atendido
      */
     public int getTempoNaFila(){
         return this.tempoNaFila;
-    }
-
-    /**
-     * Getter do modificador de desconto do cliente
-     * @return double modificadorDesconto - valor do modificador de desconto do cliente
-     */
-    public double getModificadorDesconto(){
-        return this.modificadorDesconto;
     }
 }

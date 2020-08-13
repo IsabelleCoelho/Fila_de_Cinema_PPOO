@@ -14,14 +14,14 @@ public class Preferencial extends Cliente{
      * @param int tempoNaFila - a quantidade de tempo que o com atendimento preferencial fica na fila para o atendimento
      * @param String tipo - o tipo de necessidade especial do cliente
      */
-    public Preferencial(String nome, int idade, String cpf, int tempoNaFila, String tipo){
-        super(nome, idade, cpf, 3, tempoNaFila);
+    public Preferencial(String nome, int idade, String cpf, String tipo){
+        super(nome, idade, cpf, 3);
         this.tipo = tipo;
     }
 
     /**
      * Getter para o tipo de cliente preferencial
-     * @return String tipo - o tipo de situação preferencial do cliente
+     * @return String - o tipo de situação preferencial do cliente
      */
     public String getTipo(){
         return this.tipo;
@@ -29,7 +29,7 @@ public class Preferencial extends Cliente{
 
     /**
      * Setter para o tipo de cliente preferencial
-     * @param String novoTipo - o novo tipo de situação preferencial do cliente
+     * @param novoTipo - String que contém o novo tipo de situação preferencial do cliente
      */
     public void setTipo(String novoTipo){
         this.tipo = novoTipo;

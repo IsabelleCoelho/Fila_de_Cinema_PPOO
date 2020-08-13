@@ -13,9 +13,9 @@ public class Cinema {
 
     /**
      * Construtor da classe Cinema.
-     * @param String nome - nome do cinema
-     * @param String cep - cep do cinema
-     * @param String cnpj - cnpj do cinema
+     * @param nome - string que representa o nome do cinema
+     * @param cep - string que representa o cep do cinema
+     * @param cnpj - string que representa cnpj do cinema
      */
     public Cinema(String nome, String cep, String cnpj){
         this.nome=nome;
@@ -29,88 +29,64 @@ public class Cinema {
 
     /**
      * Getter para o nome
-     * @return String nome - o nome do cinema
+     * @return String - o nome do cinema
      */
     public String getNome(){
         return nome;
     }
     /**
      * Getter para o cep
-     * @return String cep - o cep do cinema
+     * @return String - o cep do cinema
      */
     public String getCep(){
         return cep;
     }
     /**
      * Getter para o cnpj
-     * @return String cnpj - o cnpj do cinema
+     * @return String - o cnpj do cinema
      */
     public String getCnpj(){
         return cnpj;
     }
-
-    /**
-     * Setter para o nome
-     * @param String novoNome - o novo nome do cinema
-     */
-    public void setNome(String novoNome){
-        nome = novoNome;
-    }
-    /**
-     * Setter para o cep
-     * @param String novoCep - o novo cep do cinema
-     */
-    public void setCep(String novoCep){
-        cep = novoCep;
-    }
-    /**
-     * Setter para o cnpj
-     * @param String novoCnpj - o novo cnpj do cinema
-     */
-    public void setCnpj(String novoCnpj){
-        cnpj = novoCnpj;
-    }
-
     /**
      * Método responsável por adicionar uma sessão ao cinema.
-     * @param Sessao sessao - uma sessão do cinema
+     * @param sessao - um objeto do tipo Sessao
      */
     public void adicionarSessao(Sessao sessao){
         sessoes.add(sessao);
     }
     /**
      * Método responsável por adicionar um cliente na fila
-     * @param Cliente cliente - um cliente para entrar na fila
+     * @param cliente - um objeto do tipo Cliente
      */
     public void adicionarNaFila(Cliente cliente){
         fila.adicionarNaFila(cliente);
     }
     /**
-     * Método responsável por retirar um cliente da fila
-     * @param cliente - um cliente para sair da fila
+     * Método responsável por retirar um cliente da fila.
      * @param sessaoAtual - a sessão no qual o cliente vai entrar
+     * @return Cliente - cliente removido da fila.
      */
-    public Cliente retirarDaFila(Sessao sessaoAtual){
+    public Cliente retirarDaFila(Sessao sessaoAtual, Guiche guiche){
         Cliente removido;
-        if(sessaoAtual.getLotacao()>0 && sessaoAtual.getEstado().equals("Aberta")){
+        if(sessaoAtual.getQuantIngresso()>0 && sessaoAtual.getEstado().equals("Aberta")){
             removido = fila.removerDaFila();
+            System.out.println(valorAPagar(sessaoAtual, removido));
             sessaoAtual.venderIngresso();
-            sessaoAtual.setLotacao();
         }
         else{
             fecharSessao(sessaoAtual);
             System.out.println(getSessaoAtual().getFilme());
             getSessaoAtual().venderIngresso();
             removido = fila.removerDaFila();
-            getSessaoAtual().setLotacao();
+            System.out.println(valorAPagar(getSessaoAtual(), removido));
         }
+        guiche.setAtendendo(atendimento(removido, guiche));
         System.out.println(getSessaoAtual().getQuantIngresso());
         return removido;
     }
     /**
-     * Método responsável por abrir um guiche no cinema
-     * @param guiche - o guiche que será aberto
-     * @param funcionario - o funcionário que trabalhará no guiche
+     * Método responsável por abrir um guiche no cinema.
      */
     public void abrirGuiche(){
         int i=0;
@@ -126,17 +102,24 @@ public class Cinema {
     }
     /**
      * Método responsável por fechar uma sessão
-     * @param sessao - a sessão que será fechada
+     * @param sessao - um objeto do tipo Sessao
      */
     public void fecharSessao(Sessao sessao){
         sessao.fecharSessao();
     }
     /**
      * Método responsável por atender um cliente.
+     * @param cliente - objeto do tipo Cliente
+     * @param guiche - objeto do tipo Guiche
+     * @return int - tempo levado para atender o cliente.
      */
     public int atendimento(Cliente cliente, Guiche guiche){
         return cliente.getTempoDeAtencao()*guiche.tempoAtendimento();
     }
+    /**
+     * Getter da sessão atual.
+     * @return  Sessao - sessão atual.
+     */
     public Sessao getSessaoAtual(){
         int i=0;
         while(sessoes.get(i).getEstado().equals("Fechada")){
@@ -144,10 +127,49 @@ public class Cinema {
         }
         return sessoes.get(i);
     }
+    /**
+     * Método responsável por adicionar um funcionário.
+     * @param funcionario - objeto do tipo Funcionario
+     */
     public void adicionarFuncionario(Funcionario funcionario){
         escala.add(funcionario);
     }
+    /**
+     * Método responsável por adicionar um guiche.
+     * @param guiche - objeto do tipo Guiche.
+     */
     public void adicionarGuiche(Guiche guiche){
         bilheteria.add(guiche);
+    }
+    /**
+     * Método responsável por calcular o valor que o cliente deve pagar.
+     * @param sessao - objeto do tipo Sessao
+     * @param cliente - objeto do tipo Ciente 
+     * @return double - valor que o cliente deve pagar.
+     */
+    public double valorAPagar(Sessao sessao, Cliente cliente){
+        return sessao.valorAPagar(cliente);
+    }
+    /**
+     * Método que retorna o guiche em determinada posição do ArrayList
+     * @param i - inteiro que representa o índice do ArrayList
+     * @return Guiche - o guiche que está na posição "i" do ArrayList
+     */
+    public Guiche guicheAtual(int i){
+        return bilheteria.get(i);
+    }
+    /**
+     * Método responsável por retornar a quantidade de guiches.
+     * @return int - quantidade de guiches.
+     */
+    public int quantGuiches(){
+        return bilheteria.size();
+    }
+    /**
+     * Getter da quantidade de clientes que estão na fila.
+     * @return int - quantidade de clientes na fila
+     */
+    public int getQuantCliente(){
+        return fila.getTamanhoFila();
     }
 }
