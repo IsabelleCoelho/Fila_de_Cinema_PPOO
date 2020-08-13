@@ -7,7 +7,7 @@ public class Main {
     public static void main(String[] args){
         Arquivo arquivo = new Arquivo();
         try {
-            arquivo.ler(cinema);
+            cinema = arquivo.ler();
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
@@ -75,6 +75,7 @@ public class Main {
         Cliente atual;
         int atendAtual=1;
         while(atendAtual>0){
+            System.out.println();
             while(cinema.getQuantCliente()>0){
                 for (int j = 0; j < cinema.quantGuiches() && cinema.getQuantCliente()>0; j++) {
                     Guiche guicheAtual=cinema.guicheAtual(j);

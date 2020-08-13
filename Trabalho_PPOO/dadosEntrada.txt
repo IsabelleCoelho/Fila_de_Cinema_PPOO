@@ -1,0 +1,104 @@
+Cinemark,13,13
+3
+2,Aviador,sala1,matine,4
+3,Avenger,sala2,regular,6
+4,cinderela,sala3,estreia,3
+3
+regular
+Figueiredo Magalhães,30,312.127.780-49,1500,13:45
+gerente
+Gustavo Portes,32,896.329.310-68,3000,15:00,atendimento
+estagiario
+Paulo Afonso,23,774.579.610-54,400,09:30,atender
+5
+45
+regular
+Rafael de Oliveria Fernandes,12,178.749.690-22
+estudante
+Leonardo Palmeiras Botizner Mitnicky,13,589.577.390-76,22
+regular
+Renato Figueiredo Pereira,14,194.085.260-90
+regular
+Luiz Antonio Carlos,12,399.091.490-10
+estudante
+Kalinda Rosa dos Reis,13,948.843.850-98,22
+regular
+Jagunço de Mendonsa,14,766.690.840-72
+preferencial
+Paula Martins,14,807.349.200-83,cadeirante
+regular
+Inássio Meritíssimo,32,106.150.700-94
+preferencial
+Hugo Davilla,80,404.099.350-00,idoso
+regular
+Angélica Turqueza,19,209.458.380-50
+regular
+Matheus Machado,27,433.745.360-18
+regular
+Flávio Castro,41,250.391.530-23
+regular
+Roger Carvalho,36,933.612.480-35
+estudante
+Júlia Tavares,20,052.294.840-55,22
+preferencial
+Natália Greghi,28,466.123.420-05,gestante
+regular
+Denilson Tavão,30,263.407.500-60
+estudante
+Isaac Apóstolo III,40,295.177.310-27,22
+regular
+Danilo Erick Mateus Teixeira,20,279.541.170-90
+regular
+Heitor Augusto Xavier,20,028.422.330-18
+estudante
+Ryan Kauê Souza,20,620.649.360-17,22
+preferencial
+Gabrielly Carolina Sebastiana,19,552.740.500-50,gestante
+regular
+Marcelo Nathan Souza,49,589.963.096-56
+estudante
+Eloá Marina Fogaça,23,935.676.857-91,22
+regular
+Milena Luna,30,654.006.868-93
+preferencial
+Benedito João Fogaça,90,791.617.861-36,idoso
+regular
+Luna Clara Alves,33,348.573.007-61
+estudante
+Ester Isabela,12,912.937.095-73,22
+regular
+Ruan Ian Alves,27,615.857.237-38
+regular
+Isabel Alícia Beatriz Barros,28,440.011.254-39
+preferencial
+Marlene Carolina,56,227.001.277-14,cadeirante
+estudante
+Eduardo Vicente Barros,17,309.570.718-50,22
+estudante
+Carlos Severino Gomes,18,817.000.425-05,22
+estudante
+Emily Luana Bárbara,17,804.264.644-51,22
+regular
+André Hugo Gomes,35,542.540.726-27
+regular
+Francisca Isadora Moreira,19,757.822.718-17
+preferencial
+Ruan Mateus Benedito Moreira,61,190.391.505-83,idoso
+regular
+Carla Lúcia Emily,16,569.957.662-29
+regular
+Olivia Allana Rodrigues,24,004.548.340-04
+regular
+Daiane Priscila Hadassa,41,866.429.944-77
+estudante
+André José Rodrigues,27,197.049.488-32,22
+regular
+Castelo Branco,38,679.722.070-03
+regular
+Miguel Mateus Aragão,44,063.441.480-12
+regular
+Regina Laura Gomes,20,45992.200.5-17
+preferencial
+Laura Joana Lívia,28,225.751.626-53,deficiente físico
+regular
+Isaac Samuel Gomes,30,696.997.020-52

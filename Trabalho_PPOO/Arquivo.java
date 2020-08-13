@@ -4,13 +4,13 @@
 import java.io.*;
 
 public class Arquivo {
-    public void ler(Cinema cinema){
+    public Cinema ler() throws Exception {
         try (BufferedReader arquivo = new BufferedReader(new FileReader("dadosEntrada.txt"))) {
             String linha = arquivo.readLine();
             String[] campos = linha.split(",");
-            cinema = new Cinema(campos[0], campos[1], campos[2]);
-            linha = arquivo.readLine();
-            for (int i = 0; i < Integer.parseInt(linha); ++i) {
+            Cinema cinema = new Cinema(campos[0], campos[1], campos[2]);
+            String num = arquivo.readLine();
+            for (int i = 0; i < Integer.parseInt(num); ++i) {
                 linha = arquivo.readLine();
                 campos = linha.split(",");
                 Evento evento;
@@ -26,34 +26,34 @@ public class Arquivo {
                         break;
                     default:
                         throw new Exception("Formato inválido para o cadastro das sessões.");
-                        break;
                 }
                 cinema.adicionarSessao(new Sessao(campos[0], campos[1], campos[2], evento, Integer.parseInt(campos[4])));
             }
-            linha = arquivo.readLine();
-            for (int i = 0; i < Integer.parseInt(linha); ++i) {
-                cinema.adicionarGuiche(new Guiche());
-                cinema.abrirGuiche();
-            }
-            linha = arquivo.readLine();
-            for (int i = 0; i < Integer.parseInt(linha); ++i) {
+            num = arquivo.readLine();
+            for (int i = 0; i < Integer.parseInt(num); ++i) {
                 String tipoFuncionario = arquivo.readLine();
                 campos = arquivo.readLine().split(",");
                 switch (tipoFuncionario) {
                     case "regular":
                         Funcionario funcionario = new Funcionario(campos[0], Integer.parseInt(campos[1]), campos[2], Integer.parseInt(campos[3]), campos[4]);
+                        cinema.adicionarFuncionario(funcionario);
                         break;
                     case "gerente":
                         Gerente gerente = new Gerente(campos[0], Integer.parseInt(campos[1]), campos[2], Integer.parseInt(campos[3]), campos[4], campos[5]);
+                        cinema.adicionarFuncionario(gerente);
                         break;
                     case "estagiario":
                         Estagiario estagiario = new Estagiario(campos[0], Integer.parseInt(campos[1]), campos[2], Integer.parseInt(campos[3]), campos[4], campos[5]);
+                        cinema.adicionarFuncionario(estagiario);
                         break;
                     default:
                         throw new Exception("Formato inválido para os funcionários!");
-                        break;
                 }
             }
+            num = arquivo.readLine();
+            for (int i = 0; i < Integer.parseInt(num); ++i)
+                cinema.adicionarGuiche(new Guiche());
+            cinema.abrirGuiche();
             linha = arquivo.readLine();
             for (int i = 0; i < Integer.parseInt(linha); ++i) {
                 String tipoCliente = arquivo.readLine();
@@ -73,33 +73,15 @@ public class Arquivo {
                         break;
                     default:
                         throw new Exception("Formato inválido para os clientes!");
-                        break;
                 }
             }
+            return cinema;
         } catch(IOException e) {
             throw new Exception(e.getMessage());
         }
     }
 
     public void escrever() {
-        try(FileWriter arquivo = new FileWriter("dadosEntrada.txt")) {
-            
-        } catch(IOException e) {
-            
-        }
-    
-        try(FileWriter arquivo = new FileWriter("dadosEntrada.txt")) {
-            
-        } catch(IOException e) {
-            
-        }
-    
-        try(FileWriter arquivo = new FileWriter("dadosEntrada.txt")) {
-            
-        } catch(IOException e) {
-            
-        }
-    
         try(FileWriter arquivo = new FileWriter("dadosEntrada.txt")) {
             
         } catch(IOException e) {
