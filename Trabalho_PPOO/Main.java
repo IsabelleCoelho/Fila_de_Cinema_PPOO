@@ -91,7 +91,6 @@ public class Main {
                 }
                 cinema.adicionarTempo();
             }
-            System.out.println(atendAtual);
             atendAtual--;
         }
     }

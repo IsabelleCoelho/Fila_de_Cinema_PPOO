@@ -1,8 +1,8 @@
 Cinemark,13,13
 3
-2,Aviador,sala1,matine,4
-3,Avenger,sala2,regular,6
-4,cinderela,sala3,estreia,3
+2,Aviador,sala1,matine,10
+3,Avenger,sala2,regular,20
+4,cinderela,sala3,estreia,15
 3
 regular
 Figueiredo Magalhães,30,312.127.780-49,1500,13:45
