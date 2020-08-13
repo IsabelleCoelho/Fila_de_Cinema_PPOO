@@ -1,9 +1,16 @@
 /**
  * Classe que representa o evento matinê que ocorrerá no cinema.
- * COLOCAR O QUE FAZ (ex: permite realizar a compra do ingresso)
  */
 
 
-public class Matine {
-    
+public class Matine extends Evento{
+    /**
+     * Método responsável por calcular o valor do ingresso.
+     * Como se trata de Matinê, todos os clientes pagam metade do valor.
+     * @param double - valor do ingresso inteiro
+     * @return double - valor que o cliente deve pagar
+     */
+    public double valorAPagar(double preco){
+        return preco/2;
+    }
 }

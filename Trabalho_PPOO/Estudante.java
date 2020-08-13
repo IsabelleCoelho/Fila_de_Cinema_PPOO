@@ -1,27 +1,36 @@
 /**
  * Classe que representa um estudante que está frequentando o cinema.
- * COLOCAR O QUE FAZ (ex: permite realizar a compra do ingresso)
  */
 public class Estudante extends Cliente{
-    //Atributos
     private String documento;
 
-    //Construtor
-    public Estudante(String nome, String idade, String cpf, int tempoDeAtencao, int tempoNaFila, double modificadorDesconto, String documento){
-        super(nome, idade, cpf, tempoDeAtencao, tempoNaFila, modificadorDesconto);
+    /**
+     * Construtor da classe Estudante
+     * @param nome - o nome do estudante
+     * @param idade - a idade do estudante
+     * @param cpf - o cpf do estudante
+     * @param tempoDeAtencao - o tempo que o estudante precisa de atenção no atendimento
+     * @param tempoNaFila - o tempo que o estudante passou na fila de espera
+     * @param documento - o documento do estudante
+     */
+    public Estudante(String nome, int idade, String cpf, String documento){
+        super(nome, idade, cpf, 2, 0, 0.5);
         this.documento = documento;
     }
 
-    //Getters
+    /**
+     * Getter para o documento
+     * @return documento - o documento do estudante
+     */
     public String getDocumento(){
         return documento;
     }
 
-    //Setters
+    /**
+     * Setter para o documento
+     * @param novoDocumento - o novo documento do estudante
+     */
     public void setDocumento(String novoDocumento){
         documento=novoDocumento;
-    }
-    public String toString(){
-        return "";
-    }   
+    }  
 }

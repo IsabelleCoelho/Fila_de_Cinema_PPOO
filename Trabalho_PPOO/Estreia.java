@@ -1,8 +1,13 @@
 /**
  * Classe que representa o evento estreia que ocorrera no cinema.
- * COLOCAR O QUE FAZ (ex: permite realizar a compra do ingresso)
  */
 
-public class Estreia {
-    
+public class Estreia extends Evento{
+    private double precoExtra;
+    public Estreia(double precoExtra){
+        this.precoExtra = precoExtra;
+    }
+    public double valorAPagar(double preco){
+        return preco*precoExtra;
+    }
 }

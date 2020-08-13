@@ -1,14 +1,23 @@
 /**
  * Classe que representa um estagiário que trabalha no cinema.
- * COLOCAR O QUE FAZ (ex: permite realizar a compra do ingresso)
  */
 
 public class Estagiario extends Funcionario{
-    //Construtor
-    public Estagiario(String nome, String idade, String cpf, int salario, String expediente, String tempoAtendendo){
+    /**
+     * Construtor da classe Estagiario.
+     * @param String nome - o nome do estagiário
+     * @param int idade - a idade do estagiário
+     * @param String cpf - o cpf do estagiário
+     * @param int salario - o salário do estagiário
+     * @param String expediente - a carga horária ou parte do dia que o estagiário trabalha
+     * @param int tempoAtendimento - o tempo que o estagiário leva para atender um cliente
+     */
+    public Estagiario(String nome, int idade, String cpf, int salario, String expediente, int tempoAtendendo){
         super(nome, idade, cpf, salario, expediente, tempoAtendendo);
     }
+    @Override
     public String toString(){
         return "";
     }
+    
 }

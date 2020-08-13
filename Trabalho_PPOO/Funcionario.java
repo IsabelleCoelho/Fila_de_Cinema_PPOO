@@ -1,18 +1,24 @@
 import java.util.HashMap;
 /**
  * Classe que representa um funcionário do cinema.
- * COLOCAR O QUE FAZ (ex: permite realizar a compra do ingresso)
  */
 
-public abstract class Funcionario extends Pessoa{
-    //Atributos
+public class Funcionario extends Pessoa{
     private int salario;
     private String expediente;
-    private String tempoAtendendo;
+    private int tempoAtendendo;
     private HashMap<String, Integer> numAtendimentos;
 
-    //Construtor
-    public Funcionario(String nome, String idade, String cpf, int salario, String expediente, String tempoAtendendo){
+    /**
+     * Construtor da classe Funcionario
+     * @param nome - nome do funcionário
+     * @param idade - nome do funcionário
+     * @param cpf - cpf do funcionário
+     * @param salario - salario do funcionário
+     * @param expediente - carga horária ou parte do dia que o funcionário trabalha
+     * @param tempoAtendimento - tempo que o funcionário leva para atender um cliente
+     */
+    public Funcionario(String nome, int idade, String cpf, int salario, String expediente, int tempoAtendendo){
         super(nome, idade, cpf);
         this.salario=salario;
         this.expediente=expediente;
@@ -20,26 +26,47 @@ public abstract class Funcionario extends Pessoa{
         numAtendimentos = new HashMap<String, Integer>();
     }
     
-    //Getters
+    /**
+     * Getter para o salario
+     * @return salario - o salario que o funcionário recebe
+     */
     public int getSalario(){
         return salario;
     }
+    /**
+     * Getter para o expediente
+     * @return expediente - o tempo de expedição no cinema
+     */
     public String getExpediente(){
         return expediente;
     }
-    public String getTempoAtendendo(){
+    /** 
+     * Getter para o tempo de atendimento
+     * @return tempoAtendendo - o tempo que o funcionário gastou para atender um cliente
+     */
+    public int getTempoAtendendo(){
         return tempoAtendendo;
     }
 
-    //Setters
+    /**
+     * Setter para o salario
+     * @param novoSalario - o novo salário do funcionário
+     */
     public void setSalario(int novoSalario){
-        salario=novoSalario;
+        salario = novoSalario;
     }
+    /**
+     * Setter para o expediente
+     * @param novoExpediente - o novo expediente do funcionário
+     */
     public void setExpediente(String novoExpediente){
-        expediente=novoExpediente;
+        expediente = novoExpediente;
     }
-    public void setTempoAtendendo(String novoTempoAtendendo){
-        tempoAtendendo=novoTempoAtendendo;
-    }
-    public abstract String toString();   
+    /**
+     * Setter para o tempo de atendimento
+     * @param novoTempoAtendimento - o novo tempo que o funcionário leva para atender um cliente
+     */
+    public void setTempoAtendendo(int novoTempoAtendendo){
+        tempoAtendendo = novoTempoAtendendo;
+    }   
 }
