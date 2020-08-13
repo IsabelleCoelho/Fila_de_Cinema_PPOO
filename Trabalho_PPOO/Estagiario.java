@@ -11,13 +11,12 @@ public class Estagiario extends Funcionario{
      * @param int salario - o salário do estagiário
      * @param String expediente - a carga horária ou parte do dia que o estagiário trabalha
      * @param int tempoAtendimento - o tempo que o estagiário leva para atender um cliente
+     * @param String aprendendo - a área do cinema que o estagiário está aprendendo
      */
-    public Estagiario(String nome, int idade, String cpf, int salario, String expediente, int tempoAtendendo){
-        super(nome, idade, cpf, salario, expediente, tempoAtendendo);
+
+    private String aprendendo;
+    public Estagiario(String nome, int idade, String cpf, int salario, String expediente, String aprendendo){
+        super(nome, idade, cpf, salario, expediente, 3);
+        this.aprendendo=aprendendo;
     }
-    @Override
-    public String toString(){
-        return "";
-    }
-    
 }

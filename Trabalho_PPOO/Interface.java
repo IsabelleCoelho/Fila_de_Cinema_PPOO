@@ -1,8 +1,7 @@
+import javax.swing.JFrame;
 /**
  * Classe que representa a interface do sistema.
  */
-import javax.swing.JFrame;
-
 public class Interface {
     private JFrame janela;
     /**

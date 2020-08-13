@@ -3,6 +3,7 @@
  */
 
 public class Gerente extends Funcionario{
+    private String setor;
     /**
      * Construtor para a classe Gerente
      * @param String nome - o nome do gerente
@@ -11,13 +12,10 @@ public class Gerente extends Funcionario{
      * @param int salario - o salario do gerente
      * @param String expediente - carga horária ou parte do dia que o gerente trabalha
      * @param int tempoAtendimento - tempo que o gerente leva para atender um cliente
+     * @param String setor - indica o setor em que o gerente atua
      */
-    public Gerente(String nome, int idade, String cpf, int salario, String expediente, int tempoAtendendo){
-        super(nome, idade, cpf, salario, expediente, tempoAtendendo);
-    }
-
-    @Override
-    public String toString(){
-        return "";
-    }
+    public Gerente(String nome, int idade, String cpf, int salario, String expediente, String setor){
+        super(nome, idade, cpf, salario, expediente, 1);
+        this.setor=setor;
+    }    
 }

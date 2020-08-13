@@ -38,7 +38,7 @@ public class Guiche {
      * @return int - o tempo de atendimento do funcionario
      */
     public int tempoAtendimento(){
-        return funcionario.getTempoAtendendo();
+        return funcionario.gettempoAtendimento();
     }
     /**
      * Método responsável por atribuir novo valor ao atributo "atendendo".
@@ -46,6 +46,8 @@ public class Guiche {
      */
     public void setAtendendo(int novoAtendendo){
         this.atendendo=novoAtendendo;
+        funcionario.adicionarTempoAtendimento(novoAtendendo);
+        funcionario.setPessoasAtendidas();
     }
     /**
      * Método responsável por decrementar o valor de atendendo.

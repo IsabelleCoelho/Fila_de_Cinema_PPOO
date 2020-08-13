@@ -71,7 +71,7 @@ public class Cinema {
         Cliente removido;
         if(sessaoAtual.getQuantIngresso()>0 && sessaoAtual.getEstado().equals("Aberta")){
             removido = fila.removerDaFila();
-            System.out.println(valorAPagar(sessaoAtual, removido));
+            System.out.println("Valor pago por "+ removido.getNome() +" : "+ valorAPagar(sessaoAtual, removido));
             sessaoAtual.venderIngresso();
         }
         else{
@@ -79,10 +79,10 @@ public class Cinema {
             System.out.println(getSessaoAtual().getFilme());
             getSessaoAtual().venderIngresso();
             removido = fila.removerDaFila();
-            System.out.println(valorAPagar(getSessaoAtual(), removido));
+            System.out.println("Valor pago por "+ removido.getNome() + " : " + valorAPagar(getSessaoAtual(), removido));
         }
         guiche.setAtendendo(atendimento(removido, guiche));
-        System.out.println(getSessaoAtual().getQuantIngresso());
+        System.out.println(removido.getNome() + " ficou "+ removido.getTempoNaFila() + " na fila");
         return removido;
     }
     /**
@@ -171,5 +171,8 @@ public class Cinema {
      */
     public int getQuantCliente(){
         return fila.getTamanhoFila();
+    }
+    public void adicionarTempo(){
+        fila.adicionarTempo();
     }
 }

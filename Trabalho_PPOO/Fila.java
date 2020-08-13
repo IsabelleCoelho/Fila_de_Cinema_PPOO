@@ -69,4 +69,9 @@ public class Fila {
             }
             clientes.add(i, pessoa);
     }
+    public void adicionarTempo(){
+        for (Cliente cliente : clientes) {
+            cliente.addTempoNaFila();
+        }
+    }
 }

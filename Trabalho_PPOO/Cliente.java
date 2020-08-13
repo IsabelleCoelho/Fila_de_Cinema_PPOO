@@ -47,4 +47,8 @@ public class Cliente extends Pessoa{
     public int getTempoNaFila(){
         return this.tempoNaFila;
     }
+
+    public void addTempoNaFila(){
+        this.tempoNaFila++;
+    }
 }
