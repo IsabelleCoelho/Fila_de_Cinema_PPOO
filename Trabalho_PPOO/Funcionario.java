@@ -7,6 +7,7 @@ public class Funcionario extends Pessoa{
     private int salario;
     private String expediente;
     private int tempoAtendendo;
+    private String estado;
     private HashMap<String, Integer> numAtendimentos;
 
     /**
@@ -23,6 +24,7 @@ public class Funcionario extends Pessoa{
         this.salario=salario;
         this.expediente=expediente;
         this.tempoAtendendo=tempoAtendendo;
+        this.estado="descansando";
         numAtendimentos = new HashMap<String, Integer>();
     }
     
@@ -47,6 +49,9 @@ public class Funcionario extends Pessoa{
     public int getTempoAtendendo(){
         return tempoAtendendo;
     }
+    public String getEstado(){
+        return estado;
+    }
 
     /**
      * Setter para o salario
@@ -68,5 +73,8 @@ public class Funcionario extends Pessoa{
      */
     public void setTempoAtendendo(int novoTempoAtendendo){
         tempoAtendendo = novoTempoAtendendo;
+    }
+    public void setEstado(String estado){
+        this.estado=estado;
     }   
 }

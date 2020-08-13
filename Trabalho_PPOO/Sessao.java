@@ -11,7 +11,7 @@ public class Sessao {
     private int lotacao;
     private double preco;
     private String estado;
-    private ArrayList<Ingresso> ingressos;
+    private LinkedList<Ingresso> ingressos;
 
     /**
      * Construtor para a classe Sessao
@@ -29,8 +29,12 @@ public class Sessao {
         this.evento=evento;
         this.lotacao=lotacao;
         this.preco=preco;
-        estado = "Fechada";
-        ingressos=new ArrayList<Ingresso>();
+        estado = "Aberta";
+        ingressos=new LinkedList<Ingresso>();
+        for (int i = 0; i < this.lotacao; i++) {
+            Ingresso ingresso = new Ingresso(getFilme(), i, 20, "integral");
+            ingressos.add(ingresso);
+        }
     }
 
     /**
@@ -90,29 +94,25 @@ public class Sessao {
         this.preco=novoPreco;
     }
     /**
-     * Setter para a lotação - diminui em um a lotação da sessão
-     */
-    public void setLotacao(){
-        this.lotacao--;
-    }
-    /**
      * Setter para a situação da sessão
      * @param String estado - o novo estado em que a sessão se encontra (aberto ou fechado)
      */
     public void setEstado(String estado){
         this.estado = estado;
     }
-
-    /**
-     * Abre uma sessão
-     */
-    public void abrirSessao(){
-        setEstado("Aberta");
-    }
     /**
      * Fecha uma sessão
      */
     public void fecharSessao(){
         setEstado("Fechada");
+    }
+    public int getQuantIngresso(){
+        return ingressos.size();
+    }
+    public void setLotacao(){
+        lotacao--;
+    }
+    public void venderIngresso(){
+        ingressos.remove();
     }
 }

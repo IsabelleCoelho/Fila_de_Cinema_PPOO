@@ -90,32 +90,39 @@ public class Cinema {
      * @param cliente - um cliente para sair da fila
      * @param sessaoAtual - a sessão no qual o cliente vai entrar
      */
-    public boolean retirarDaFila(Cliente cliente, Sessao sessaoAtual){
+    public Cliente retirarDaFila(Sessao sessaoAtual){
+        Cliente removido;
         if(sessaoAtual.getLotacao()>0 && sessaoAtual.getEstado().equals("Aberta")){
-            fila.removerDaFila(cliente);
+            removido = fila.removerDaFila();
+            sessaoAtual.venderIngresso();
             sessaoAtual.setLotacao();
-            return true;
         }
         else{
             fecharSessao(sessaoAtual);
-            return false;
+            System.out.println(getSessaoAtual().getFilme());
+            getSessaoAtual().venderIngresso();
+            removido = fila.removerDaFila();
+            getSessaoAtual().setLotacao();
         }
+        System.out.println(getSessaoAtual().getQuantIngresso());
+        return removido;
     }
     /**
      * Método responsável por abrir um guiche no cinema
      * @param guiche - o guiche que será aberto
      * @param funcionario - o funcionário que trabalhará no guiche
      */
-    public void abrirGuiche(Guiche guiche, Funcionario funcionario){
-        guiche.setFuncionario(funcionario);
-        bilheteria.add(guiche);
-    }
-    /**
-     * Método responsável por abrir uma sessão
-     * @param sessao - a sessão que será aberta
-     */
-    public void abrirSessao(Sessao sessao){
-        sessao.abrirSessao();
+    public void abrirGuiche(){
+        int i=0;
+        while(bilheteria.get(i).getFuncionario()!=null){
+            i++;
+        }
+        int j=0;
+        while(escala.get(j).getEstado().equals("trabalhando")){
+            j++;
+        }
+        bilheteria.get(i).setFuncionario(escala.get(j));
+        escala.get(j).setEstado("trabalhando");
     }
     /**
      * Método responsável por fechar uma sessão
@@ -129,5 +136,18 @@ public class Cinema {
      */
     public int atendimento(Cliente cliente, Guiche guiche){
         return cliente.getTempoDeAtencao()*guiche.tempoAtendimento();
+    }
+    public Sessao getSessaoAtual(){
+        int i=0;
+        while(sessoes.get(i).getEstado().equals("Fechada")){
+            i++;
+        }
+        return sessoes.get(i);
+    }
+    public void adicionarFuncionario(Funcionario funcionario){
+        escala.add(funcionario);
+    }
+    public void adicionarGuiche(Guiche guiche){
+        bilheteria.add(guiche);
     }
 }

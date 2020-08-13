@@ -41,8 +41,10 @@ public class Fila {
      * Método responsável por revomer um cliente da fila
      * @param Cliente pessoa - objeto do tipo cliente que será removido da fila
      */
-    public void removerDaFila(Cliente pessoa){
-        clientes.remove(pessoa);
+    public Cliente removerDaFila(){
+        Cliente removido = clientes.getFirst();
+        clientes.remove(clientes.getFirst());
+        return removido;
     }
 
     /**
