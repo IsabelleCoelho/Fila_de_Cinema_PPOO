@@ -87,19 +87,19 @@ public class Arquivo {
         } catch(IOException e) {
             
         }
-    }
+    
         try(FileWriter arquivo = new FileWriter("dadosEntrada.txt")) {
             
         } catch(IOException e) {
             
         }
-    }
+    
         try(FileWriter arquivo = new FileWriter("dadosEntrada.txt")) {
             
         } catch(IOException e) {
             
         }
-    }
+    
         try(FileWriter arquivo = new FileWriter("dadosEntrada.txt")) {
             
         } catch(IOException e) {
