@@ -81,11 +81,11 @@ public class Arquivo {
         }
     }
 
-    public void escrever() {
-        try(FileWriter arquivo = new FileWriter("dadosEntrada.txt")) {
-            
+    public void escrever(String msg) throws Exception {
+        try(FileWriter arquivo = new FileWriter("estatistica.txt")) {
+            arquivo.write(msg);
         } catch(IOException e) {
-            
+            throw new Exception(e.getMessage());
         }
     }
 }

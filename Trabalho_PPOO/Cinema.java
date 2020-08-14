@@ -10,6 +10,7 @@ public class Cinema {
     private ArrayList<Funcionario> escala;
     private ArrayList<Sessao> sessoes;
     private Fila fila;
+    private Estatistica estatistica;
 
     /**
      * Construtor da classe Cinema.
@@ -25,6 +26,7 @@ public class Cinema {
         bilheteria=new ArrayList<Guiche>();
         sessoes=new ArrayList<Sessao>();
         fila = Fila.getInstance();
+        this.estatistica = Estatistica.getInstance();
     }
 
     /**
@@ -174,5 +176,19 @@ public class Cinema {
     }
     public void adicionarTempo(){
         fila.adicionarTempo();
+    }
+    public String gerarEstatistica() {
+        String msg = "";
+        for (Funcionario funcionario : escala) {
+            estatistica.adicionarFuncionario(funcionario);
+        }
+        HashMap<Funcionario, Double> estatistic = estatistica.getEstatisticaFuncionario();
+        Set<Funcionario> funcionarios = estatistic.keySet();
+        for (Funcionario funcionario : funcionarios) {
+            msg += funcionario.getNome()+' ';
+            msg += estatistic.get(funcionario)+"\n";
+        }
+        msg += "Média geral: "+estatistica.mediaGeral();
+        return msg;
     }
 }

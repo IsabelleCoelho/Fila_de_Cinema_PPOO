@@ -7,15 +7,14 @@ import java.util.Set;
 
 public class Estatistica {
     private static HashMap<Funcionario, Double> estatisticaFuncionario;
-    private static double estatisticaGeral;
     private static Estatistica instanciaUnica;
 
     private Estatistica(){
         estatisticaFuncionario = new HashMap<Funcionario, Double>();
-        estatisticaGeral = 0;
     }
 
     public static Estatistica getInstance(){
+        System.out.println("antes do for");
         if(instanciaUnica == null){
             instanciaUnica = new Estatistica();
         }
@@ -27,6 +26,7 @@ public class Estatistica {
         ArrayList<Integer> tempos = funcionario.getTempoAtendimentos();
         for(int tempo : tempos){
             mediaAtendimentos += tempo;
+            System.out.println(tempo);
         }
         return (mediaAtendimentos/(funcionario.getPessoasAtendidas()));
     }
