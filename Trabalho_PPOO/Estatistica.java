@@ -14,7 +14,6 @@ public class Estatistica {
     }
 
     public static Estatistica getInstance(){
-        System.out.println("antes do for");
         if(instanciaUnica == null){
             instanciaUnica = new Estatistica();
         }
@@ -26,7 +25,6 @@ public class Estatistica {
         ArrayList<Integer> tempos = funcionario.getTempoAtendimentos();
         for(int tempo : tempos){
             mediaAtendimentos += tempo;
-            System.out.println(tempo);
         }
         return (mediaAtendimentos/(funcionario.getPessoasAtendidas()));
     }

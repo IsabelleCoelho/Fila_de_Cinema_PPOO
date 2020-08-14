@@ -1,4 +1,7 @@
-Figueiredo Magalhães 3.2
-Gustavo Portes NaN
-Paulo Afonso NaN
-Média geral: NaN
+Tempo médio por funcionário:
+Figueiredo Magalhães 3.3333333333333335
+Gustavo Portes 1.5555555555555556
+Paulo Afonso 4.833333333333333
+Média geral: 3.2407407407407405
+
+Maior tempo de espera na fila: 30

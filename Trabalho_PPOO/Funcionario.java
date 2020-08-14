@@ -106,6 +106,7 @@ public class Funcionario extends Pessoa{
     }
     /**
      * Getter para as pessoas que foram atendidas até o momento.
+     * @return int - quantidade de pessoas atendidas
      */
     public int getPessoasAtendidas(){
         return pessoasAtendidas;

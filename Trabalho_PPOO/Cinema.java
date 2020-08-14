@@ -11,6 +11,7 @@ public class Cinema {
     private ArrayList<Sessao> sessoes;
     private Fila fila;
     private Estatistica estatistica;
+    private static int tempoUltimo;
 
     /**
      * Construtor da classe Cinema.
@@ -85,6 +86,9 @@ public class Cinema {
         }
         guiche.setAtendendo(atendimento(removido, guiche));
         System.out.println(removido.getNome() + " ficou "+ removido.getTempoNaFila() + " na fila");
+        if (fila.getTamanhoFila() == 0) {
+            tempoUltimo = removido.getTempoNaFila()+atendimento(removido, guiche);
+        }
         return removido;
     }
     /**
@@ -92,11 +96,11 @@ public class Cinema {
      */
     public void abrirGuiche(){
         int i=0;
-        while(bilheteria.get(i).getFuncionario()!=null){
+        while(i<quantGuiches()-1 && bilheteria.get(i).getFuncionario()!=null){
             i++;
         }
         int j=0;
-        while(escala.get(j).getEstado().equals("trabalhando")){
+        while(j<escala.size()-1 && escala.get(j).getEstado().equals("trabalhando")){
             j++;
         }
         bilheteria.get(i).setFuncionario(escala.get(j));
@@ -178,7 +182,7 @@ public class Cinema {
         fila.adicionarTempo();
     }
     public String gerarEstatistica() {
-        String msg = "";
+        String msg = "Tempo médio por funcionário:\n";
         for (Funcionario funcionario : escala) {
             estatistica.adicionarFuncionario(funcionario);
         }
@@ -189,6 +193,7 @@ public class Cinema {
             msg += estatistic.get(funcionario)+"\n";
         }
         msg += "Média geral: "+estatistica.mediaGeral();
+        msg += "\n\nMaior tempo de espera na fila: "+tempoUltimo;
         return msg;
     }
 }

@@ -14,7 +14,6 @@ public class Main {
         Cliente atual;
         int atendAtual=1;
         while(atendAtual>0){
-            System.out.println();
             while(cinema.getQuantCliente()>0){
                 for (int j = 0; j < cinema.quantGuiches() && cinema.getQuantCliente()>0; j++) {
                     Guiche guicheAtual=cinema.guicheAtual(j);
@@ -33,7 +32,6 @@ public class Main {
             atendAtual--;
         }
         try {
-            System.out.println(cinema.gerarEstatistica());
             arquivo.escrever(cinema.gerarEstatistica());
         } catch(Exception e) {
             System.out.println(e.getMessage());

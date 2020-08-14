@@ -51,9 +51,10 @@ public class Arquivo {
                 }
             }
             num = arquivo.readLine();
-            for (int i = 0; i < Integer.parseInt(num); ++i)
+            for (int i = 0; i < Integer.parseInt(num); ++i) {
                 cinema.adicionarGuiche(new Guiche());
-            cinema.abrirGuiche();
+                cinema.abrirGuiche();
+            }
             linha = arquivo.readLine();
             for (int i = 0; i < Integer.parseInt(linha); ++i) {
                 String tipoCliente = arquivo.readLine();
