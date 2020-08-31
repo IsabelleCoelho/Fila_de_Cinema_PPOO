@@ -74,18 +74,14 @@ public class Cinema {
         Cliente removido;
         if(sessaoAtual.getQuantIngresso()>0 && sessaoAtual.getEstado().equals("Aberta")){
             removido = fila.removerDaFila();
-            System.out.println("Valor pago por "+ removido.getNome() +" : "+ valorAPagar(sessaoAtual, removido));
             sessaoAtual.venderIngresso();
         }
         else{
             fecharSessao(sessaoAtual);
-            System.out.println(getSessaoAtual().getFilme());
             getSessaoAtual().venderIngresso();
             removido = fila.removerDaFila();
-            System.out.println("Valor pago por "+ removido.getNome() + " : " + valorAPagar(getSessaoAtual(), removido));
         }
         guiche.setAtendendo(atendimento(removido, guiche));
-        System.out.println(removido.getNome() + " ficou "+ removido.getTempoNaFila() + " na fila");
         if (fila.getTamanhoFila() == 0) {
             tempoUltimo = removido.getTempoNaFila()+atendimento(removido, guiche);
         }
